@@ -55,6 +55,7 @@
     <Compile Include="StockPriceUpdate.cs" />
     <Compile Include="Subscribers\EmailClient.cs" />
     <Compile Include="SimpleEventAggregator.cs" />
+    <Compile Include="Subscribers\PersonalAssistant.cs" />
     <Compile Include="Subscribers\StockMarketTicker.cs" />
   </ItemGroup>
   <ItemGroup>

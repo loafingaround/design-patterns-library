@@ -24,6 +24,9 @@ namespace EventAggregatorPattern
 
             StockMarketTicker tickers = new StockMarketTicker("Gerry's Android phone", ea);
 
+            PersonalAssistant assistant1 = new PersonalAssistant("Rebecca's iPhone", ea);
+            PersonalAssistant assistant2 = new PersonalAssistant("Joe's Windows phone", ea);
+
             // now publish some stuff:
 
             tracker.SendPriceUpdate(new StockPriceUpdate
