@@ -1,6 +1,6 @@
 ﻿namespace EventAggregatorPattern.Events
 {
-    class MessageSentEvent
+    class EmailSentEvent
     {
         public Email Email { get; set; }
     }

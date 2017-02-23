@@ -17,7 +17,7 @@ namespace EventAggregatorPattern.Publishers
             // do not have to check that event is not null
             // i.e. whether there were any subscribers
             // can pass Publish any type of object
-            eventAggregator.Publish(new MessageSentEvent
+            eventAggregator.Publish(new EmailSentEvent
             {
                 Email = email
             });

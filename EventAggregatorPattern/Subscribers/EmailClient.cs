@@ -11,7 +11,7 @@ namespace EventAggregatorPattern.Subscribers
     // signature of class expresses intent w/o reading through class
     // several different approaches to event aggregator pattern exist
     // this is one of them (apparently advocated by Jeremy Miller, author of StructureMap)
-    class EmailClient: ISubscriber<MessageSentEvent>
+    class EmailClient: ISubscriber<EmailSentEvent>
     {
         private string name;
 
@@ -43,7 +43,7 @@ namespace EventAggregatorPattern.Subscribers
             Console.Write(toPrint.ToString());
         }
 
-        public void OnEvent(MessageSentEvent e)
+        public void OnEvent(EmailSentEvent e)
         {
             DisplayEmail(e.Email);
         }

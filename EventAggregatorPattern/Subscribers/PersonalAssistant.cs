@@ -3,7 +3,7 @@ using System;
 
 namespace EventAggregatorPattern.Subscribers
 {
-    class PersonalAssistant : ISubscriber<MessageSentEvent>, ISubscriber<StockPriceUpdateSent>
+    class PersonalAssistant : ISubscriber<EmailSentEvent>, ISubscriber<StockPriceUpdateSent>
     {
         private string deviceName;
 
@@ -24,7 +24,7 @@ namespace EventAggregatorPattern.Subscribers
             Console.WriteLine($"{deviceName} >>>>> Incoming email: {email.Subject} from {email.From}");
         }
 
-        public void OnEvent(MessageSentEvent e)
+        public void OnEvent(EmailSentEvent e)
         {
             DisplayEmailAlert(e.Email);
         }

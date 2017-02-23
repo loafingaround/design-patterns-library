@@ -47,7 +47,7 @@
     <Compile Include="IEventAggregator.cs" />
     <Compile Include="ISubscriber.cs" />
     <Compile Include="Email.cs" />
-    <Compile Include="Events\MessageSentEvent.cs" />
+    <Compile Include="Events\EmailSentEvent.cs" />
     <Compile Include="Publishers\MailingList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
