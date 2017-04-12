@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChainOfResponsibility
 {
+    // forms part of in Null Object pattern
     class EndOfChainExpenseHandler : IExpenseHandler
     {
         private EndOfChainExpenseHandler()
