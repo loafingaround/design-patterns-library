@@ -22,6 +22,7 @@ namespace FlyweightPattern
 
                 IBuilding building = BuildingFactory.GetBuilding(buildingType);
 
+                // plot number, extrinsic state, is computed and passed in when required, instead of being passed into constructor
                 building.Build(plotNumber);
             }
 
