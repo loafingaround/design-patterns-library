@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgePattern", "BridgePattern\BridgePattern.csproj", "{E3FEE113-1F59-4B78-9A74-5A2176218EA6}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAggregatorPattern", "EventAggregatorPattern\EventAggregatorPattern.csproj", "{114F4DBD-9720-44AB-AE8D-38BF37BD7B2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyweightPattern", "FlyweightPattern\FlyweightPattern.csproj", "{B48254EF-4A39-4FC7-9B5D-CF52630D588A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterPattern", "AdapterPattern\AdapterPattern.csproj", "{2F03812A-6A06-4DCC-91A4-A8C69CF7D78C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,8 +59,15 @@ Global
 		{B48254EF-4A39-4FC7-9B5D-CF52630D588A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B48254EF-4A39-4FC7-9B5D-CF52630D588A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B48254EF-4A39-4FC7-9B5D-CF52630D588A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F03812A-6A06-4DCC-91A4-A8C69CF7D78C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F03812A-6A06-4DCC-91A4-A8C69CF7D78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F03812A-6A06-4DCC-91A4-A8C69CF7D78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F03812A-6A06-4DCC-91A4-A8C69CF7D78C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CED5347E-4313-40FA-A8A9-7361F597C8A8}
 	EndGlobalSection
 EndGlobal
