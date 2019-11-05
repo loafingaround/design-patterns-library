@@ -8,7 +8,7 @@ namespace AdapterPattern
     public class Tests
     {
         [Test]
-        public void StubRenderer()
+        public void StubDataAdapter()
         {
             var renderer = new DataRenderer(new StubDataAdapter());
 
@@ -22,6 +22,23 @@ namespace AdapterPattern
 
             var lineCount = result.Count(c => c == '\n') + 1;
             Assert.AreEqual(4, lineCount);
+        }
+
+        [Test]
+        public void CsvDataAdapter()
+        {
+            var renderer = new DataRenderer(new CsvDataAdapter());
+
+            var writer = new StringWriter();
+
+            renderer.Render(writer);
+
+            var result = writer.ToString();
+
+            Console.Write(result);
+
+            var lineCount = result.Count(c => c == '\n') + 1;
+            Assert.AreEqual(61, lineCount);
         }
     }
 }

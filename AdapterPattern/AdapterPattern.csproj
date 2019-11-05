@@ -48,12 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataRenderer.cs" />
+    <Compile Include="CsvDataAdapter.cs" />
     <Compile Include="StubDataAdapter.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="WIKI-AET.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
