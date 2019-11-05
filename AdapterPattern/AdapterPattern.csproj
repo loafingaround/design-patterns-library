@@ -48,8 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataRenderer.cs" />
-    <Compile Include="CsvDataAdapter.cs" />
-    <Compile Include="StubDataAdapter.cs" />
+    <Compile Include="Adapters\CsvDataAdapter.cs" />
+    <Compile Include="Adapters\StubDataAdapter.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
