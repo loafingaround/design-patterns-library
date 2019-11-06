@@ -13,7 +13,9 @@ namespace MementoPattern
     // This is the caretaker
     public partial class Form1 : Form
     {
-        readonly Stack<IMemento> states = new Stack<IMemento>();
+        // N.B. the undo states stack always has the *current* state on the top
+        readonly Stack<IMemento> undoStates = new Stack<IMemento>();
+        readonly Stack<IMemento> redoStates = new Stack<IMemento>();
 
         public Form1()
         {
@@ -39,23 +41,31 @@ namespace MementoPattern
 
         void Undo()
         {
-            if (states.Count > 1)
+            if (undoStates.Count > 1)
             {
-                states.Pop();
-                var memento = states.Peek();
+                var prevMemento = undoStates.Pop();
+                redoStates.Push(prevMemento);
+
+                var memento = undoStates.Peek();
                 panel1.SetMemento(memento);
             }
         }
 
         void Redo()
         {
-            // TODO
+            if (redoStates.Any())
+            {
+                var memento = redoStates.Pop();
+                undoStates.Push(memento);
+
+                panel1.SetMemento(memento);
+            }
         }
 
         void StoreState()
         {
             var memento = panel1.CreateMemento();
-            states.Push(memento);
+            undoStates.Push(memento);
         }
 
         void PanelChange(object sender, object e)
