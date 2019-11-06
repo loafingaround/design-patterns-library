@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace MementoPattern
 {
@@ -8,18 +9,27 @@ namespace MementoPattern
         TextBox textBox;
         TrackBar trackBar1;
         CheckBox checkBox1;
-        ColorDialog colorDialog1;
         ListBox listBox1;
         DateTimePicker dateTimePicker1;
 
+        public EventHandler<object> Change;
+
         public IMemento CreateMemento()
         {
-            return new Memento();
+            return new Memento
+            {
+                State = new ControlsState
+                {
+                    Text = textBox.Text
+                }
+            };
         }
 
         public void SetMemento(IMemento memento)
         {
+            var controlsState = (ControlsState) memento.State;
 
+            textBox.Text = controlsState.Text;
         }
 
         public PanelWithUndoRedo()
@@ -32,7 +42,6 @@ namespace MementoPattern
             this.textBox = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 
@@ -81,6 +90,8 @@ namespace MementoPattern
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 4;
 
+            this.textBox.TextChanged += TextBox_TextChanged;
+            
             Controls.Add(this.textBox);
             Controls.Add(this.trackBar1);
             Controls.Add(this.dateTimePicker1);
@@ -88,6 +99,16 @@ namespace MementoPattern
             Controls.Add(this.listBox1);
 
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Change?.Invoke(this, null);
+        }
+
+        private class ControlsState
+        {
+            public string Text { get; set; }
         }
     }
 }
