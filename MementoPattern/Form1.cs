@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 // N.B. The undo, CTRL + Z, and redo, CTRL + Y, shortcut implementations are a bit basic:
 // CTRL must be held down *while* Z/Y is pressed.
 // Also: if the text box is still focused its own undo/redo functionality with interfere a little
+
+// In general this works but it doesn't seem to work smoothly - there may be the odd glitch
 
 namespace MementoPattern
 {

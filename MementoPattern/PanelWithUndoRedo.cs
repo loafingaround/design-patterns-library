@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace MementoPattern
 {
@@ -16,11 +17,19 @@ namespace MementoPattern
 
         public IMemento CreateMemento()
         {
+            var selectedIndices = new int[listBox1.SelectedIndices.Count];
+            for (var i = 0; i < selectedIndices.Length; i++)
+                selectedIndices[i] = listBox1.SelectedIndices[i];
+
             return new Memento
             {
                 State = new ControlsState
                 {
-                    Text = textBox.Text
+                    Text = textBox.Text,
+                    SelectedIndices = selectedIndices,
+                    Date = dateTimePicker1.Value,
+                    TrackerValue = trackBar1.Value,
+                    Checked = checkBox1.Checked
                 }
             };
         }
@@ -30,6 +39,11 @@ namespace MementoPattern
             var controlsState = (ControlsState) memento.State;
 
             textBox.Text = controlsState.Text;
+            for (var i = 0; i < listBox1.Items.Count; i++)
+                listBox1.SetSelected(i, controlsState.SelectedIndices.Contains(i));
+            dateTimePicker1.Value = controlsState.Date;
+            trackBar1.Value = controlsState.TrackerValue;
+            checkBox1.Checked = controlsState.Checked;
         }
 
         public PanelWithUndoRedo()
@@ -90,7 +104,12 @@ namespace MementoPattern
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 4;
 
-            this.textBox.TextChanged += TextBox_TextChanged;
+            this.textBox.KeyUp += ControlChanged;
+            this.listBox1.MouseUp += ControlChanged;
+            this.checkBox1.MouseUp += ControlChanged;
+            this.dateTimePicker1.MouseUp += ControlChanged;
+            this.dateTimePicker1.KeyUp += ControlChanged;
+            this.trackBar1.MouseUp += ControlChanged;
             
             Controls.Add(this.textBox);
             Controls.Add(this.trackBar1);
@@ -100,8 +119,8 @@ namespace MementoPattern
 
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
         }
-
-        private void TextBox_TextChanged(object sender, EventArgs e)
+        
+        private void ControlChanged(object sender, EventArgs e)
         {
             Change?.Invoke(this, null);
         }
@@ -109,6 +128,10 @@ namespace MementoPattern
         private class ControlsState
         {
             public string Text { get; set; }
+            public int[] SelectedIndices { get; set; }
+            public DateTime Date { get; set; }
+            public int TrackerValue { get; set; }
+            public bool Checked { get; set; }
         }
     }
 }
