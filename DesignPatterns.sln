@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgePattern", "BridgePattern\BridgePattern.csproj", "{E3FEE113-1F59-4B78-9A74-5A2176218EA6}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatorPattern", "MediatorPattern\MediatorPattern.csproj", "{9F3F7295-9220-46E9-B1BB-EA10136FE796}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{3AA9C370-3ED5-420C-A62E-8168EEDB3D07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypePattern", "PrototypePattern\PrototypePattern.csproj", "{935B21D8-BF6A-4DD5-9DE1-E6DED5843471}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{3AA9C370-3ED5-420C-A62E-8168EEDB3D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AA9C370-3ED5-420C-A62E-8168EEDB3D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AA9C370-3ED5-420C-A62E-8168EEDB3D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{935B21D8-BF6A-4DD5-9DE1-E6DED5843471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935B21D8-BF6A-4DD5-9DE1-E6DED5843471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935B21D8-BF6A-4DD5-9DE1-E6DED5843471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935B21D8-BF6A-4DD5-9DE1-E6DED5843471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
