@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StrategyPattern.Business.Models;
+using StrategyPattern.Business.Strategies;
 
 namespace StrategyPattern
 {
@@ -19,6 +16,10 @@ namespace StrategyPattern
                     DestinationCountry = "Sweden"
                 }
             };
+
+            order.LineItems.Add(new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", ItemType.Literature, 100m), 1);
+
+            Console.WriteLine(order.GetTax(new SwedenSalesTaxStrategy()));
         }
     }
 }

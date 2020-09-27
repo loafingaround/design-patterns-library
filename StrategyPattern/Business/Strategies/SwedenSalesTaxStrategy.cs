@@ -2,6 +2,7 @@
 
 namespace StrategyPattern.Business.Strategies
 {
+    // strategy class
     public class SwedenSalesTaxStrategy: ISalesTaxStrategy
     {
         public decimal GetTax(Order order)
