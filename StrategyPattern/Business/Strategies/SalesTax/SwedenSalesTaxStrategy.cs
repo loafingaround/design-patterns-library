@@ -1,6 +1,6 @@
 ﻿using StrategyPattern.Business.Models;
 
-namespace StrategyPattern.Business.Strategies
+namespace StrategyPattern.Business.Strategies.SalesTax
 {
     // strategy class
     public class SwedenSalesTaxStrategy: ISalesTaxStrategy

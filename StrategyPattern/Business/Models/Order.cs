@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using StrategyPattern.Business.Strategies;
+using StrategyPattern.Business.Strategies.SalesTax;
+using StrategyPattern.Business.Strategies.Invoice;
 
 namespace StrategyPattern.Business.Models
 {
@@ -13,6 +14,8 @@ namespace StrategyPattern.Business.Models
 
         public ISalesTaxStrategy SalesTaxStrategy { get; set; }
 
+        public IInvoiceStrategy InvoiceStrategy { get; set; }
+
         public decimal GetTax(ISalesTaxStrategy salesTaxStrategy = null)
         {
             salesTaxStrategy = salesTaxStrategy ?? SalesTaxStrategy;
@@ -21,6 +24,14 @@ namespace StrategyPattern.Business.Models
                 return 0;
 
             return salesTaxStrategy.GetTax(this);
+        }
+
+        public void FinalizeOrder()
+        {
+            // Some logic to make certain checks, e.g. is there at least 1 payment with a payment provider type of "Invoice", is the amount due > 0,
+            // is the shipping status "Waiting For Payment" - else return an error
+
+            InvoiceStrategy.Generate(this);
         }
     }
 }
